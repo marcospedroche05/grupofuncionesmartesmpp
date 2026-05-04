@@ -31,7 +31,8 @@ public class Function1
         else
         {
             //INCLUIMOS LA CADENA DE CONEXIÓN MANUAL AQUÍ
-            string connectionString = "Data Source=sqlpedroche3430.database.windows.net;Initial Catalog=AZURETAJAMAR;Persist Security Info=True;User ID=adminsql;Password=Admin123;Encrypt=True;Trust Server Certificate=True";
+            //string connectionString = "Data Source=sqlpedroche3430.database.windows.net;Initial Catalog=AZURETAJAMAR;Persist Security Info=True;User ID=adminsql;Password=Admin123;Encrypt=True;Trust Server Certificate=True";
+            string connectionString = Environment.GetEnvironmentVariable("SqlAzure");
             string sql = "UPDATE EMP SET SALARIO=SALARIO + 1 "
                 + "WHERE EMP_NO=@idempleado";
             SqlConnection cn = new SqlConnection(connectionString);
